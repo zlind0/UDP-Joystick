@@ -1,0 +1,137 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="#ff272727"
+    >
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textClock"
+        android:textColor="@android:color/white"
+        android:layout_marginEnd="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/vsb_Brake"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="么么哒"
+        android:id="@+id/label_LocalIP"
+        android:textColor="#fffdf7ff"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignStart="@+id/label_AccData"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FEEDBACK"
+        android:id="@+id/label_AccData"
+        android:textColor="#fffdf7ff"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/button_Handbrake"
+        android:layout_marginStart="20dp"/>
+
+    <com.example.hzl.udpjoystick.VerticalSeekBar
+        android:layout_width="40dp"
+        android:layout_height="300dp"
+        android:layout_alignParentRight="true"
+        android:background="#ff323232"
+        android:layout_marginRight="10dp"
+        android:id="@+id/vsb_Accelerate"
+        android:max="128"/>
+
+    <com.example.hzl.udpjoystick.VerticalSeekBar
+        android:layout_width="40dp"
+        android:layout_height="200dp"
+        android:layout_alignParentRight="true"
+        android:background="#ff323232"
+        android:layout_marginRight="80dp"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentTop="true"
+        android:id="@+id/vsb_Brake"
+        android:max="128"
+        android:contentDescription="BRAKE"
+        android:textAlignment="center"
+        android:splitTrack="true"
+        android:layout_centerHorizontal="true"
+        android:progress="128"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:text="HAND\nBRAKE"
+        android:background="#ffff0000"
+        android:textColor="#fffdf7ff"
+        android:id="@+id/button_Handbrake"
+        android:textSize="20dp"
+        android:backgroundTint="#ffc40009"
+        android:clickable="true"/>
+
+    <Button
+        android:layout_width="90dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/button_Handbrake"
+        android:id="@+id/button_Increase"
+        android:layout_alignParentStart="true"
+        android:background="#ff4c4a4a"
+        android:text="+"
+        android:textColor="#fffdf7ff"
+        android:layout_margin="5dp"
+        android:textSize="30dp"
+        android:clickable="true"/>
+
+    <Button
+        android:layout_width="90dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/button_Increase"
+        android:id="@+id/button_Decrease"
+        android:layout_alignParentStart="true"
+        android:background="#ff4a4848"
+        android:text="-"
+        android:textColor="#fffdf7ff"
+        android:layout_margin="5dp"
+        android:textSize="40dp"
+        android:clickable="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BRAKE"
+        android:id="@+id/textView"
+        android:textColor="#fffdf7ff"
+        android:layout_below="@+id/vsb_Brake"
+        android:layout_alignStart="@+id/vsb_Brake"
+        android:layout_marginTop="5pt"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:text="THRUST"
+        android:textColor="#fffdf7ff"
+        android:layout_alignBottom="@+id/vsb_Accelerate"
+        android:layout_alignStart="@+id/textView"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="1.0测试版\n已知的软件缺陷：\n多线程优化问题，可能导致耗电量比较大\n无法二次连接，如果掉线，请完全退出程序再次连接\n现在只有手刹按钮能用，很抱歉哦，以后会完善的"
+        android:id="@+id/textView3"
+        android:textColor="#fffdf7ff"
+        android:layout_alignBaseline="@+id/button_Handbrake"
+        android:layout_alignBottom="@+id/button_Handbrake"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="连接"
+        android:id="@+id/button_Connect"
+        android:layout_below="@+id/vsb_Brake"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
